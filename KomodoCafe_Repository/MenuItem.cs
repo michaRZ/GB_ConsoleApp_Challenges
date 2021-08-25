@@ -13,12 +13,12 @@ namespace KomodoCafe_Repository
         // empty - for tests
         public MenuItem() { }
 
-        public MenuItem(int mealNumber, string name, string description, List<Inventory> ingredients, decimal price)
+        public MenuItem(int mealNumber, string name, string description, List<string> ingredients, decimal price)
         {
             MealNumber = mealNumber;
             Name = name;
             Description = description;
-            Ingredients = new List<Inventory>(ingredients);
+            Ingredients = ingredients;
             Price = price;
         }
 
@@ -26,6 +26,7 @@ namespace KomodoCafe_Repository
 
 
         // PROPERTIES
+        
         public int MealNumber { get; set; }
 
         private string _name;
@@ -43,13 +44,13 @@ namespace KomodoCafe_Repository
 
         public string Description { get; set; }
 
-        public List<Inventory> Ingredients { get; set; }
+        public List<string> Ingredients { get; set; }
 
         public decimal Price { get; set; }
     }
 
 
     // Available meal igredients from store inventory
-    public enum Inventory { bun, GF_bun, grilled_Chicken, fried_Chicken, spicy_Chicken, bacon, cheese, lettuce, tomato, pickle, ketchup, mustard, mayo, fries, salad, fruit }
+    //public enum Inventory { bun, GF_bun, grilled_Chicken, fried_Chicken, spicy_Chicken, bacon, cheese, lettuce, tomato, pickle, ketchup, mustard, mayo, fries, salad, fruit }
 
 }

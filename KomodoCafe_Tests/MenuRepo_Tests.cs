@@ -12,7 +12,7 @@ namespace KomodoCafe_Tests
         // preset fields for test methods to reference
         private MenuRepository _repo = new MenuRepository();
         private MenuItem _menuItem = new MenuItem(1, "Grilled chicken sandwich meal", "grilled chicken sandwich with fries",
-            new List<Inventory> { Inventory.bun, Inventory.grilled_Chicken, Inventory.pickle, Inventory.fries }, 8.49m);
+            new List<string> {"bun", "grilled chicken", "pickles", "fries" }, 8.49m);
 
         [TestInitialize]
         public void Arrange()
@@ -66,7 +66,7 @@ namespace KomodoCafe_Tests
         public void DeleteItem_ShouldReturnTrue()
         {
             MenuItem item2 = new MenuItem(3, "Fried chicken sandwich", "crispy breaded sandwich served on a bun with pickles and ketchup, sandwich only",
-                new List<Inventory> { Inventory.bun, Inventory.fried_Chicken, Inventory.pickle, Inventory.ketchup }, 5.29m);
+                new List<string> { "bun", "fried chicken", "pickle", "ketchup" }, 5.29m);
 
             bool wasAdded = _repo.AddItemToMenu(item2);
             Assert.IsTrue(wasAdded);
