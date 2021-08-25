@@ -23,8 +23,6 @@ namespace KomodoCafe_Repository
         }
 
 
-
-
         // PROPERTIES
         
         public int MealNumber { get; set; }
