@@ -28,7 +28,7 @@ namespace KomodoCafe_Repository
 
 
         // READ
-        // consider adding methods for getting list of menu items with certain ingredients, ie gf_bun or spicy_chicken
+        // consider adding methods for getting list of menu items with certain ingredients, ie gf bun or spicy chicken
         public List<MenuItem> GetFullMenu()
         {
             return _menu;

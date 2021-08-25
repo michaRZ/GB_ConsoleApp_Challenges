@@ -9,7 +9,7 @@ namespace KomodoBadges_Repository
     public class BadgeRepository
     {
         private List<Badge> _badges = new List<Badge>();
-        public Dictionary<int, string> _secDictionary = new Dictionary<int, string>();
+        private Dictionary<int, string> _secDictionary = new Dictionary<int, string>();
 
 
         // CREATE
