@@ -6,67 +6,65 @@ using System.Threading.Tasks;
 
 namespace KomodoBadges_Repository
 {
+
     public class BadgeRepository
     {
-        private List<Badge> _badges = new List<Badge>();
-        private Dictionary<int, string> _secDictionary = new Dictionary<int, string>();
+        // private List<Badge> _repo = new List<Badge>(); - unused
+
+        private static Dictionary<int, List<string>> _badgeDict = new Dictionary<int, List<string>>();
 
 
         // CREATE
-        public bool AddBadgeToList(Badge badge)
+        public bool AddBadgeToDictionary(Badge badge)
         {
-            int startingCount = _badges.Count;
+            int startingCount = _badgeDict.Count;
 
-            _badges.Add(badge);
-
-            bool wasAdded = _badges.Count > startingCount;
+            _badgeDict.Add(badge.BadgeID, badge.AccessDoors);
+            
+            bool wasAdded = _badgeDict.Count > startingCount;
             return wasAdded;
         }
 
         // READ
-        public Dictionary<int, string> GetDictionary()
-        {          
-            foreach (Badge employee in _badges)
-            {
-                string doorsString = string.Join(",", _badges);
-                _secDictionary.Add(employee.BadgeID, doorsString);
-            }
-            return _secDictionary;
+        public Dictionary<int, List<string>> GetDictionary()
+        {
+            return _badgeDict;
         }
 
         public Badge GetBadgeByNumber(int number)
         {
-            foreach (Badge employee in _badges)
+            if (_badgeDict.ContainsKey(number))
             {
-                if (employee.BadgeID == number)
-                {
-                    return employee;
-                }
+                Badge badge = new Badge(number);    // utilise single param constructor
+                badge.AccessDoors = _badgeDict[number];     // pull associated values w/ key 'number'
+                return badge;
             }
             return null;
         }
 
-
-        /* - not sure if these are needed
         // UPDATE
-        public bool AddAccessDoor()
+        public bool UpdateExistingBadge(int idNum, Badge newBadge)
         {
-
-
+            Badge oldBadge = GetBadgeByNumber(idNum);
+            
+            if (_badgeDict.ContainsKey(idNum))
+            {
+                oldBadge.BadgeID = newBadge.BadgeID;
+                oldBadge.AccessDoors = newBadge.AccessDoors;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-
-        // DELETE/UPDATE (not deleting instances of badge, only deleting AccessDoors
-        public bool DeleteAccessDoor(int number, string door)
+        // DELETE - deleting instance of badge in dictionary, NOT deleting doors
+        // won't be used in actual Console App
+        public bool DeleteBadge(Badge badge)
         {
-            if (_secDictionary.ContainsKey(number))
-            {
-                _secDictionary.Remove(door);
-            }
-            bool wasDeleted = ; 
+            bool wasDeleted = _badgeDict.Remove(badge.BadgeID);
             return wasDeleted;
         }
-        */
-
     }
 }

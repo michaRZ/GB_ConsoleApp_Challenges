@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KomodoBadges_Console
+namespace KomodoGreetings_Console
 {
     class Program
     {

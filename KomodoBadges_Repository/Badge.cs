@@ -8,13 +8,19 @@ namespace KomodoBadges_Repository
 {
     public class Badge
     {
-        // CONSTUCTORS
+        // CONSTRUCTORS
         public Badge() { }
+        public Badge(int badgeID)
+        {
+            BadgeID = badgeID;
+        }
         public Badge(int badgeID, List<string> accessDoors)
         {
             BadgeID = badgeID;
             AccessDoors = accessDoors;
         }
+
+
 
         // PROPERTIES
         public int BadgeID { get; set; }

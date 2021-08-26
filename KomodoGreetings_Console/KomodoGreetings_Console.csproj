@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E29A0543-3BC4-4081-B2B5-8CFDD76A3561}</ProjectGuid>
+    <ProjectGuid>{C7EFE972-082C-4DCC-B175-E508108A3A2B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KomodoBadges_Console</RootNamespace>
-    <AssemblyName>KomodoBadges_Console</AssemblyName>
+    <RootNamespace>KomodoGreetings_Console</RootNamespace>
+    <AssemblyName>KomodoGreetings_Console</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KomodoBadges_Repository\KomodoBadges_Repository.csproj">
-      <Project>{2390D6D6-7E31-48AA-8C9F-D250B08AA2A8}</Project>
-      <Name>KomodoBadges_Repository</Name>
+    <ProjectReference Include="..\KomodoGreetings_Repository\KomodoGreetings_Repository.csproj">
+      <Project>{60FC08B8-5F3B-40CE-A998-4752D589B02B}</Project>
+      <Name>KomodoGreetings_Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

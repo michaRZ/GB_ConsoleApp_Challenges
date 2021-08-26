@@ -34,7 +34,6 @@ namespace KomodoCafe_Repository
             return _menu;
         }
 
-
         public MenuItem GetItemByNumber(int number)
         {
             foreach (MenuItem item in _menu)
@@ -46,7 +45,6 @@ namespace KomodoCafe_Repository
             }
             return null;
         }
-
 
         public MenuItem GetItemByName(string name)
         {

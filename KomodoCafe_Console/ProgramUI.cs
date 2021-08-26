@@ -243,7 +243,6 @@ namespace KomodoCafe_Console
             string description = Console.ReadLine();
             item.Description = string.IsNullOrWhiteSpace(description) ? "(No description)" : description;
 
-
             // set item ingredients
             List<string> ingredients = new List<string>();
 
@@ -266,8 +265,6 @@ namespace KomodoCafe_Console
                     noMoreIngredients = true;
                 }
             }
-
-
 
             // set item price
             bool isValidPrice = false;
