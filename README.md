@@ -2,6 +2,7 @@
 # Gold Badge Console Application Challenges
 
 ### by Michaela Raines
+August 26, 2021
 
 
 <br>
@@ -13,16 +14,17 @@ As I am apparently the Jack of all trades around campus at fictional mega conglo
 + Greetings
 <br>
 <br>
+
 ## What You'll Find
 
 ### In Komodo Cafe<br>
-Use this specialty manager application to lord over your restaurants menu, with options to view all, add, update, and remove menu items.
+Use this specialty manager application to lord over your restaurant's menu, with options to view all, add, update, and remove menu items.
 
 ### In Badges
 Keep corporate secure with this application designed to keep campus access at your fingertips. View and add new employee authorised areas, and even take them away! That's right Toby, no more break room access for you!
 
 ### In Greetings
-Keep up with literally everyone in the world a la Bruce Almighty with the Komodo Marketing Customer Database application! Whether they already pay for your service, they used to pay for your service, or they're an unsuspecting random person, if they have an email inbox -- you're in it!
+Keep up with literally everyone in the world a la Bruce Almighty with the Komodo Marketing Customer Database application! Whether they already pay for your service, they used to pay for your service, or they're an unsuspecting random person -- if they have an email inbox, you're in it!
 <br>
 <br>
 <br>
