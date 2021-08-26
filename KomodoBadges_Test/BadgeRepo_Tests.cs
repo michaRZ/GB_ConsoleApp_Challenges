@@ -25,18 +25,18 @@ namespace KomodoBadges_Test
         }
 
         [TestMethod]
-        public void GetDictionary_ShouldReturnAllBadges()
+        public void UpdateExistingBadge_ShouldReturnTrue()  // passes only when run individually - why?     // test pass dependent on success of other tests?
         {
             _repo.AddBadgeToDictionary(testBadge);
-            Dictionary<int, List<string>> testDict = _repo.GetDictionary();
+            Badge newInfo = new Badge(90210, new List<string> { "R2", "D2" });
 
-            bool wasReturned = testDict.ContainsKey(testBadge.BadgeID);
+            bool isUpdated = _repo.UpdateExistingBadge(testBadge.BadgeID, newInfo);
 
-            Assert.IsTrue(wasReturned);
+            Assert.IsTrue(isUpdated);
         }
 
         [TestMethod]
-        public void GetBadgeByNumber_ShouldReturnCorrectBadge() // passes only when run individually - why?
+        public void GetBadgeByNumber_ShouldReturnCorrectBadge() // passes only when run individually - why?     // test pass dependent on success of other tests?
         {
             _repo.AddBadgeToDictionary(testBadge);
             int badgeNumber = testBadge.BadgeID;
@@ -44,18 +44,6 @@ namespace KomodoBadges_Test
             Badge retrievedBadge = _repo.GetBadgeByNumber(badgeNumber);
 
             Assert.AreEqual(retrievedBadge.BadgeID, testBadge.BadgeID);
-        }
-
-
-        [TestMethod]
-        public void UpdateExistingBadge_ShouldReturnTrue()  // passes only when run individually - why?
-        {
-            _repo.AddBadgeToDictionary(testBadge);
-            Badge newInfo = new Badge(90210, new List<string> {"R2", "D2"});
-
-            bool isUpdated = _repo.UpdateExistingBadge(testBadge.BadgeID, newInfo);
-
-            Assert.IsTrue(isUpdated);
         }
 
         // does test order matter?
@@ -67,6 +55,17 @@ namespace KomodoBadges_Test
 
             bool wasDeleted = _repo.DeleteBadge(deleteThis);
             Assert.IsTrue(wasDeleted);
+        }
+
+        [TestMethod]
+        public void GetDictionary_ShouldReturnAllBadges()
+        {
+            _repo.AddBadgeToDictionary(testBadge);
+            Dictionary<int, List<string>> testDict = _repo.GetDictionary();
+
+            bool wasReturned = testDict.ContainsKey(testBadge.BadgeID);
+
+            Assert.IsTrue(wasReturned);
         }
     }
 }
